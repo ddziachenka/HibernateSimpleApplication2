@@ -6,30 +6,30 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "HUBERNATE_DEVELOPER")
-
+@Table(name = "HIBERNATE_DEVELOPERS")
 public class Developer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column (name = "id")
     private int id;
-
-    @Column(name = "FIRST_NAME")
+    @Column (name = "FIRST_NAME")
     private String firstName;
-
-    @Column(name = "LAST_NAME")
+    @Column (name = "LAST_NAME")
     private String lastName;
-
-    @Column(name = "SPECIALTY")
+    @Column (name = "SPECIALTY")
     private String specialty;
-
-    @Column(name = "EXPERIENCE")
+    @Column (name = "EXPERIENCE")
     private int experience;
 
+    /**
+     * Default Constructor
+     */
     public Developer() {
-
     }
 
+    /**
+     * Plain constructor
+     */
     public Developer(String firstName, String lastName, String specialty, int experience) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -37,6 +37,9 @@ public class Developer {
         this.experience = experience;
     }
 
+    /**
+     * Getters and Setters
+     */
     public int getId() {
         return id;
     }
@@ -77,14 +80,16 @@ public class Developer {
         this.experience = experience;
     }
 
+    /**
+     * toString method (optional)
+     */
     @Override
     public String toString() {
         return "Developer:\n" +
-                "id=" + id +
-                "\nfirstName='" + firstName + "\n" +
-                "lastName='" + lastName + "\n" +
-                "specialty='" + specialty + "\n" +
-                "experience=" + experience + "\n"
-                ;
+                "id: " + id +
+                "\nFirst Name: " + firstName + "\n" +
+                "Last Name: " + lastName + "\n" +
+                "Specialty: " + specialty + "\n" +
+                "Experience: " + experience + "\n";
     }
 }
